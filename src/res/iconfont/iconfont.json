@@ -1,0 +1,23 @@
+{
+  "id": "3017643",
+  "name": "colorpicker",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2966922",
+      "name": "实物-吸管",
+      "font_class": "shiwu-xiguan",
+      "unicode": "e702",
+      "unicode_decimal": 59138
+    },
+    {
+      "icon_id": "6061533",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "ec7b",
+      "unicode_decimal": 60539
+    }
+  ]
+}

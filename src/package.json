@@ -1,0 +1,15 @@
+{
+    "main": "index.html",
+    "name": "懒猴取色器",
+    "version": "1.0.0",
+    "window": {
+        "width": 400,
+        "height": 607,
+        "resizable": false,
+        "position": "center",
+        "icon": "res/icon/logo.png"
+    },
+    "scripts": {
+		"server": "browser-sync start --server --files '*.*'"
+	}
+}

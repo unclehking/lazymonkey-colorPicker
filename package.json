@@ -1,0 +1,16 @@
+{
+	"name": "colorpicker",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nw src/",
+		"build": "nwbuild --platforms win64 --buildDir dist/ src/"
+	},
+	"author": "HKing",
+	"license": "ISC",
+	"devDependencies": {
+		"nw": "^0.59.0",
+		"nw-builder": "^3.5.7"
+	}
+}

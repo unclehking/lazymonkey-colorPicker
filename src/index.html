@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href=res/icon/favicon.ico>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>懒猴取色器</title>
+        <script src="res/js/vue.min.js"></script>
+        <link rel="stylesheet" href="res/style/style.css">
+        <link rel="stylesheet" href="res/iconfont/iconfont.css">
+
+    </head>
+    <body>
+        <div id="app">
+            <div class="tools">
+                <button @click="Dropper">
+                    <!-- <img src="res/icon/dropper.png" > -->
+                    <span class="iconfont icon-shiwu-xiguan"></span>
+                    吸取颜色
+                </button>
+                <div class="select" tabindex="1">
+                    <input class="selectopt" name="test" type="radio" value="hex" id="opt1" v-model="type" checked> <label for="opt1" class="option"> HEX </label>
+                    <input class="selectopt" name="test" type="radio" value="rgb" id="opt2" v-model="type"> <label for="opt2" class="option"> RGB </label>
+                    <input class="selectopt" name="test" type="radio" value="rgba" id="opt3" v-model="type"> <label for="opt3" class="option"> RGBA </label>
+                    <input class="selectopt" name="test" type="radio" value="hsl" id="opt4" v-model="type"> <label for="opt4" class="option"> HSL </label>
+                    <input class="selectopt" name="test" type="radio" value="hsla" id="opt5" v-model="type"> <label for="opt5" class="option"> HSLA </label>
+                </div>
+                <div class="deleteWrap" title="将色块拖入到此处进行删除">
+                    <div id="deleteWrap" @dragleave="dragleave" @dragenter="dragenter" @drop="drop" @dragover="allowDrop"  @click="Message(`\r\n请将色块拖入到垃圾箱进行删除\r\n`)">
+                        <div>
+                            <span class="iconfont icon-shanchu"></span>
+                            <div class="txt">松开即可删除</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-if="ColorList.length" class="colorlist">
+                <div class="one" draggable v-for="(item,index) in ColorList" @dragstart="drag($event,index)" @dragend="dragend"  @click="Copy(item[type])" title="点击复制颜色值" :style="{background:item.html,color:item.reverse}">
+                    <span class="txt">{{item[type]}}</span>
+                </div>
+            </div>
+            <div v-else class="empty" @click="Dropper">
+                <div>
+                    暂无颜色，点击吸取
+                </div>
+            </div>
+        </div>
+        <div id="DragImage">
+            <span>拖进垃圾箱删除</span>
+        </div>
+        <script type="module" src="colorpicker.js"></script>
+    </body>
+</html>
