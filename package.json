@@ -1,9 +1,10 @@
 {
 	"name": "colorpicker",
 	"version": "1.0.0",
-	"description": "",
+	"description": "懒猴取色器",
 	"main": "index.js",
 	"scripts": {
+		"installall": "npm install",
 		"dev": "nw src/",
 		"build": "nwbuild --platforms win64 --buildDir dist/ src/"
 	},
